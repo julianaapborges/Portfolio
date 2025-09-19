@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Portfólio | Juliana Borges</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        .offcanvas {
+            background-color: #181828;
+        }
+        .offcanvas-header {
+            background-color: #111184;
+            color: #fff;
+        }
+        .offcanvas-body .nav-link {
+            color: #fff;
+        }
+        .offcanvas-body .nav-link:hover {
+            background-color: #23233a;
+            color: #a78bfa;
+        }
+        body {
+            background: #151522;
+            color: #fff;
+        }
+        .hero-section {
+            background: #181828;
+            border-radius: 10px;
+            padding: 3rem;
+            margin-bottom: 2rem;
+        }
+        .hero-section h1,
+        .hero-section p {
+            color: #fff;
+        }
+        h1, h2, h3 {
+            color: #111184;
+        }
+        h2:after {
+            background-color: #111184;
+        }
+        section {
+            border-top: 4px solid #111184;
+            background: rgba(17, 17, 132, 0.03);
+            border-radius: 12px;
+            margin-bottom: 2rem;
+        }
+        #inicio {
+            border-top: none;
+            background: none;
+            border-radius: 0;
+            margin-bottom: 0;
+        }
+        /* Ajuste hero-section no tema escuro */
+        body[data-theme="dark"] .hero-section {
+            background: #181828;
+        }
+        body[data-theme="dark"] .hero-section h1,
+        body[data-theme="dark"] .hero-section p {
+            color: #fff;
+        }
+        /* Contraste nos títulos das seções */
+        body[data-theme="dark"] h1,
+        body[data-theme="dark"] h2,
+        body[data-theme="dark"] h3 {
+            color: #a78bfa;
+            text-shadow: 0 2px 8px #181828;
+        }
+        body[data-theme="dark"] h2:after {
+            background-color: #a78bfa;
+        }
+        /* Contraste azul nas seções */
+        section {
+            border-top: 4px solid var(--cor-primaria);
+            background: rgba(17, 17, 132, 0.03);
+            border-radius: 12px;
+            margin-bottom: 2rem;
+        }
+        body[data-theme="dark"] section {
+            background: rgba(60, 60, 222, 0.08);
+            border-top: 4px solid #7c5cff;
+        }
+        :root {
+            --cor-primaria: #111184;
+            --cor-primaria-hover: #3c3cde;
+            --cor-link-hover: #3c3cde;
+        }
+
+        body {
+            padding-top: 60px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .navbar {
+            background-color: var(--cor-primaria);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar-toggler {
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            padding: 0.25rem 0.5rem;
+            z-index: 1050;
+        }
+
+        .navbar-toggler:focus {
+            box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 0.25);
+            outline: none;
+        }
+
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+        }
+
+        .navbar-brand {
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+
+        .btn-primary {
+            background-color: var(--cor-primaria);
+            border-color: var(--cor-primaria);
+            transition: all 0.2s ease-in-out;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--cor-primaria-hover);
+            border-color: var(--cor-primaria-hover);
+            transform: translateY(-2px);
+        }
+
+        .tech-badge {
+            background-color: #23233a;
+            color: #a78bfa;
+            padding: 0.5em 0.8em;
+            border: 1px solid #2d2d4d;
+            border-radius: 4px;
+            font-size: 0.85em;
+            margin-right: 8px;
+            margin-bottom: 8px;
+            display: inline-block;
+            transition: all 0.2s ease;
+        }
+
+        .tech-badge:hover {
+            background-color: #111184;
+            color: #fff;
+            transform: translateY(-2px);
+        }
+
+        .offcanvas {
+            background-color: #f8f9fa;
+        }
+
+        .offcanvas-header {
+            background-color: var(--cor-primaria);
+            color: white;
+        }
+
+        .offcanvas-body .nav-link {
+            color: #333;
+            padding: 12px 15px;
+            margin-bottom: 5px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            display: block;
+            font-weight: 500;
+        }
+
+        .offcanvas-body .nav-link:hover {
+            background-color: #e9ecef;
+            color: var(--cor-primaria);
+            transform: translateX(5px);
+        }
+
+        .offcanvas-body .nav-link i {
+            width: 25px;
+            text-align: center;
+        }
+
+        section {
+            scroll-margin-top: 80px;
+            padding: 3rem 0;
+        }
+
+        .card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 100%;
+            border: none;
+            background: #23233a;
+            color: #fff;
+            box-shadow: 0 5px 15px rgba(17, 17, 132, 0.10);
+        }
+        .card .card-title {
+            color: #fff;
+        }
+        .card .card-text {
+            color: #e0e0e0;
+        }
+        .card .tech-badge {
+            background: #181828;
+            color: #a78bfa;
+            border: 1px solid #2d2d4d;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .hero-section {
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
+            border-radius: 10px;
+            padding: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        footer {
+            margin-top: 2rem;
+        }
+
+        /* Efeitos de destaque para títulos */
+        h1, h2, h3 {
+            color: var(--cor-primaria);
+        }
+
+        h2 {
+            position: relative;
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+        }
+
+        h2:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--cor-primaria);
+            border-radius: 2px;
+        }
+
+        /* Ajustes para dispositivos móveis */
+        @media (max-width: 768px) {
+            .hero-section {
+                padding: 2rem 1rem;
+            }
+            
+            .display-4 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar Fixa -->
+    <nav class="navbar navbar-dark fixed-top">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#menuOffcanvas" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="navbar-brand mx-auto" href="#">Portfólio</a>
+                        <div class="d-flex align-items-center" style="gap: 1.5rem;">
+                                <!-- Espaço reservado, removido switch de tema -->
+                        </div>
+    <style>
+        body {
+            background: #151522;
+            color: #fff;
+        }
+        .hero-section {
+            background: #181828;
+            border-radius: 10px;
+            padding: 3rem;
+            margin-bottom: 2rem;
+        }
+        .hero-section h1,
+        .hero-section p {
+            color: #fff;
+        }
+        h1, h2, h3 {
+            color: #111184;
+        }
+        h2:after {
+            background-color: #111184;
+        }
+        section {
+            border-top: 4px solid #111184;
+            background: rgba(17, 17, 132, 0.03);
+            border-radius: 12px;
+            margin-bottom: 2rem;
+        }
+    </style>
+        </div>
+    </nav>
+
+    <!-- Menu Offcanvas -->
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="menuOffcanvas">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title">Menu</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#inicio" data-bs-dismiss="offcanvas">
+                        <i class="fas fa-home me-2"></i>Início
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#sobre" data-bs-dismiss="offcanvas">
+                        <i class="fas fa-user me-2"></i>Sobre
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#habilidades" data-bs-dismiss="offcanvas">
+                        <i class="fas fa-code me-2"></i>Habilidades
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#projetos" data-bs-dismiss="offcanvas">
+                        <i class="fas fa-briefcase me-2"></i>Projetos
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contato" data-bs-dismiss="offcanvas">
+                        <i class="fas fa-envelope me-2"></i>Contato
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Conteúdo Principal -->
+    <main>
+        <section id="inicio" class="container text-center py-5">
+            <div class="hero-section">
+                <h1 class="display-4">Juliana Borges</h1>
+                <p class="lead">Estudante de Ciência da Computação com foco em desenvolvimento de software.</p>
+            </div>
+        </section>
+
+        <section id="sobre" class="container py-5">
+            <h2 class="text-center">Sobre Mim</h2>
+            <p class="text-center">
+                Cursando Ciência da Computação na Universidade Federal de Ouro Preto (UFOP), minha paixão sempre foi explorar interfaces e descobrir como as coisas funcionam por trás das telas. Adoro criar projetos do início ao fim, testar cada funcionalidade e ter aquele momento incrível de ver tudo funcionando perfeitamente. Meu objetivo é me desenvolver para construir sistemas completos com autonomia, criando um trabalho de destaque que abra portas no Brasil e no exterior.
+            </p>
+        </section>
+
+        <section id="habilidades" class="container py-5">
+            <h2 class="text-center mb-4">Habilidades</h2>
+            
+            <div class="text-center">
+                <h3>Linguagens</h3>
+                <div class="mb-4">
+                    <span class="tech-badge">C</span>
+                    <span class="tech-badge">C++</span>
+                    <span class="tech-badge">Java</span>
+                    <span class="tech-badge">Python</span>
+                    <span class="tech-badge">HTML</span>
+                    <span class="tech-badge">CSS</span>
+                    <span class="tech-badge">JavaScript</span>
+                    <span class="tech-badge">SQL</span>
+                </div>
+
+                <h3 class="mt-4">Ferramentas e Tecnologias</h3>
+                <div class="mb-4">
+                    <span class="tech-badge">Docker</span>
+                    <span class="tech-badge">Git/GitHub</span>
+                    <span class="tech-badge">Figma</span>
+                    <span class="tech-badge">Chatwoot</span>
+                    <span class="tech-badge">Gemini AI API</span>
+                </div>
+                
+                <h3 class="mt-4">Áreas de Conhecimento</h3>
+                <div class="mb-4">
+                    <span class="tech-badge">Banco de Dados</span>
+                    <span class="tech-badge">Design UX/UI</span>
+                    <span class="tech-badge">Suporte Técnico</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="projetos" class="container py-5">
+            <h2 class="text-center mb-4">Projetos</h2>
+            
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Sistema de Controle de Voos</h5>
+                            <p class="card-text">Um simulador de gerenciamento de aeroporto feito em C++, aplicando conceitos avançados de Programação Orientada a Objetos para garantir a organização e o armazenamento dos dados.</p>
+                            <div class="mb-3">
+                                <span class="tech-badge">C++</span>
+                                <span class="tech-badge">STL</span>
+                            </div>
+                            <a href="#" class="btn btn-primary">Ver no GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Metagame Assistant</h5>
+                            <p class="card-text">Assistente inteligente que utiliza a API do Gemini AI para gerar estratégias, builds e dicas personalizadas para jogos, com base no perfil do jogador. Desenvolvido durante a NLW Agents da Rocketseat.</p>
+                            <div class="mb-3">
+                                <span class="tech-badge">HTML</span>
+                                <span class="tech-badge">CSS</span>
+                                <span class="tech-badge">JavaScript</span>
+                                <span class="tech-badge">Gemini AI API</span>
+                            </div>
+                            <a href="https://github.com/julianaapborges/Metagame_Assistant.git" class="btn btn-primary" target="_blank" rel="noopener">Ver no GitHub</a>
+                                    git add .
+                        git commit -m "feat: estrutura base do portfólio em andamento (tema escuro, menu lateral, seções principais)"
+                        git push -u origin main            </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Problema do Caixeiro Viajante</h5>
+                            <p class="card-text">Implementação do clássico problema de otimização que busca o caminho mais curto para visitar todas as cidades uma única vez e retornar à origem. Utiliza listas encadeadas para representar grafos com adjacências ponderadas, aplicando conceitos de estruturas de dados e algoritmos.</p>
+                            <div class="mb-3">
+                                <span class="tech-badge">C</span>
+                            </div>
+                            <a href="#" class="btn btn-primary">Ver no GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Automação Spotify</h5>
+                            <p class="card-text">Script de automação que abre o Spotify, busca a playlist "Top 50 Brasil", reproduz as músicas e ajusta o volume para 51%. Desenvolvido de forma independente após aprender conceitos de automação na Jornada Python da Hashtag.</p>
+                            <div class="mb-3">
+                                <span class="tech-badge">Python</span>
+                                <span class="tech-badge">PyAutoGUI</span>
+                            </div>
+                            <a href="#" class="btn btn-primary">Ver no GitHub</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contato" class="container text-center py-5">
+            <h2 class="mb-4">Contato</h2>
+            <p>Gostou do que viu? Vamos conversar!</p>
+            <div class="mt-4">
+                <a href="https://github.com/julianaapborges" target="_blank" class="btn btn-dark btn-lg mx-2 mb-2">
+                    <i class="fab fa-github"></i> GitHub
+                </a>
+                <a href="https://www.linkedin.com/in/juliana-aparecida-borges-138659271" target="_blank" class="btn btn-primary btn-lg mx-2 mb-2">
+                    <i class="fab fa-linkedin"></i> LinkedIn
+                </a>
+                <a href="mailto:julianaaparecidaborges67@gmail.com" class="btn btn-secondary btn-lg mx-2 mb-2">
+                    <i class="fas fa-envelope"></i> E-mail
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-dark text-white text-center py-4">
+        <p class="mb-0">&copy; 2025 Juliana Borges. Feito com café e código.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    
+    <script>
+        // Fechar o menu ao clicar em um link e rolar suavemente
+        document.addEventListener('DOMContentLoaded', function() {
+            const offcanvas = document.getElementById('menuOffcanvas');
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        // Fecha o menu se estiver aberto
+                        if (typeof bootstrap !== 'undefined') {
+                            const offcanvasInstance = bootstrap.Offcanvas.getInstance(offcanvas);
+                            if (offcanvasInstance) offcanvasInstance.hide();
+                        }
+                        // Rolagem suave
+                        setTimeout(() => {
+                            targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        }, 300);
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

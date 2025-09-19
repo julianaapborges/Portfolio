@@ -1,0 +1,124 @@
+/* --- Variáveis de Cor e Estilos Globais --- */
+:root {
+  --cor-primaria: #111184;
+  --cor-primaria-hover: #3c3cde;
+  --cor-link-hover: #3c3cde;
+}
+
+/* Estilos gerais */
+body {
+  padding-top: 56px; /* Compensa a navbar fixa */
+}
+
+a {
+  color: var(--cor-primaria);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--cor-link-hover);
+  text-decoration: underline;
+}
+
+/* --- Barra de Navegação --- */
+.navbar {
+  background-color: var(--cor-primaria) !important;
+}
+
+.navbar-toggler {
+  border-color: rgba(255,255,255,0.2);
+}
+
+.navbar-toggler:focus {
+  box-shadow: 0 0 0 0.25rem rgba(255,255,255,0.25);
+}
+
+.navbar a {
+  color: #fff;
+}
+
+.navbar a:hover {
+  color: #ddd;
+  text-decoration: none;
+}
+
+/* --- Menu Offcanvas --- */
+.offcanvas {
+  background-color: #f8f9fa;
+}
+
+.offcanvas-header {
+  background-color: var(--cor-primaria);
+  color: white;
+}
+
+.offcanvas-body .nav-link {
+  color: #333;
+  padding: 12px 15px;
+  margin-bottom: 5px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.offcanvas-body .nav-link:hover {
+  background-color: #e9ecef;
+  color: var(--cor-primaria);
+}
+
+.offcanvas-body .nav-link i {
+  width: 25px;
+  text-align: center;
+}
+
+/* --- Botões --- */
+.btn-primary {
+  background-color: var(--cor-primaria);
+  border-color: var(--cor-primaria);
+  transition: all 0.2s ease-in-out;
+}
+
+.btn-primary:hover {
+  background-color: var(--cor-primaria-hover);
+  border-color: var(--cor-primaria-hover);
+}
+
+.btn-custom {
+  background-color: var(--cor-primaria);
+  border-color: var(--cor-primaria);
+  color: #fff;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn-custom:hover {
+  background-color: var(--cor-primaria-hover);
+  border-color: var(--cor-primaria-hover);
+  color: #fff;
+}
+
+/* --- Badges de Habilidades e Tecnologias --- */
+.tech-badge {
+  background-color: #f8f9fa;
+  color: #495057;
+  padding: 0.3em 0.6em;
+  border: 1px solid #dee2e6;
+  border-radius: 4px;
+  font-size: 0.85em;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  display: inline-block;
+}
+
+/* --- Cards de Projetos --- */
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+/* Ajuste de seções para não ficarem escondidas atrás da navbar */
+section {
+  scroll-margin-top: 70px;
+}
