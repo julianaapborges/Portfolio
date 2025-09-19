@@ -503,23 +503,43 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     
     <script>
-        // Fechar o menu ao clicar em um link e rolar suavemente
+        // Fechar o menu ao clicar em um link e rolar suavemente e lentamente até a seção
         document.addEventListener('DOMContentLoaded', function() {
             const offcanvas = document.getElementById('menuOffcanvas');
-            document.querySelectorAll('.nav-link').forEach(link => {
+            function scrollToY(targetY, duration = 1200) {
+                const startY = window.scrollY;
+                const diff = targetY - startY;
+                let start;
+                function step(timestamp) {
+                    if (!start) start = timestamp;
+                    const elapsed = timestamp - start;
+                    const progress = Math.min(elapsed / duration, 1);
+                    window.scrollTo(0, startY + diff * progress);
+                    if (progress < 1) {
+                        window.requestAnimationFrame(step);
+                    }
+                }
+                window.requestAnimationFrame(step);
+            }
+            document.querySelectorAll('.nav-link, .navbar-brand').forEach(link => {
                 link.addEventListener('click', function(e) {
-                    const targetId = this.getAttribute('href');
-                    const targetElement = document.querySelector(targetId);
-                    if (targetElement) {
-                        // Fecha o menu se estiver aberto
-                        if (typeof bootstrap !== 'undefined') {
-                            const offcanvasInstance = bootstrap.Offcanvas.getInstance(offcanvas);
-                            if (offcanvasInstance) offcanvasInstance.hide();
+                    let targetId = this.getAttribute('href');
+                    if (this.classList.contains('navbar-brand')) targetId = '#inicio';
+                    if (targetId && targetId.startsWith('#')) {
+                        const targetElement = document.querySelector(targetId);
+                        if (targetElement) {
+                            // Fecha o menu se estiver aberto
+                            if (typeof bootstrap !== 'undefined') {
+                                const offcanvasInstance = bootstrap.Offcanvas.getInstance(offcanvas);
+                                if (offcanvasInstance) offcanvasInstance.hide();
+                            }
+                            // Rolagem suave e lenta até a seção, considerando o offset da navbar
+                            setTimeout(() => {
+                                const y = targetElement.getBoundingClientRect().top + window.pageYOffset - 70;
+                                scrollToY(y, 1500);
+                            }, 300);
                         }
-                        // Rolagem suave
-                        setTimeout(() => {
-                            targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                        }, 300);
+                        e.preventDefault();
                     }
                 });
             });
