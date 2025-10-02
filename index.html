@@ -168,7 +168,13 @@
             border-top: 4px solid #111184;
             background: rgba(17, 17, 132, 0.03);
             border-radius: 12px;
-            margin-bottom: 2rem;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            margin-bottom: 0;
+            padding: 4.5em 0.5em 2em 0.5em;
         }
         #inicio {
             border-top: none;
@@ -468,14 +474,14 @@
                 <div class="hero-text" style="flex:1;">
                     <div id="typing-hello" class="mb-3" style="font-size:1.5rem; color:#b3b3b3; min-height:2.5em;"></div>
                     <h1 class="display-4">Olá, eu sou a Juliana Borges!</h1>
-                    <p class="lead">Estudante de Ciência da Computação com foco em desenvolvimento de software.</p>
+                    <p class="lead" style="font-size:1.35rem;line-height:1.7;">Estudante de Ciência da Computação com foco em desenvolvimento de software.</p>
                 </div>
             </div>
         </section>
 
-    <section id="sobre" class="container py-5 reveal">
+    <section id="sobre" class="container py-5 reveal" style="justify-content:center;padding-top:7em;">
             <h2 class="text-center">Sobre Mim</h2>
-            <p class="text-center">
+            <p class="text-center" style="font-size:1.35rem;line-height:1.7;">
                 Cursando Ciência da Computação na Universidade Federal de Ouro Preto (UFOP), <br>
                 minha paixão sempre foi explorar interfaces e descobrir como as coisas funcionam por trás das telas.<br> 
                 Adoro criar projetos do início ao fim, testar cada funcionalidade e ter aquele momento incrível de ver tudo funcionando perfeitamente.<br>
@@ -483,7 +489,7 @@
             </p>
         </section>
 
-    <section id="habilidades" class="container py-5 reveal">
+    <section id="habilidades" class="container py-5 reveal" style="min-height:auto;display:block;padding:3rem 0;">
             <h2 class="text-center mb-4">Habilidades</h2>
             
             <div class="text-center">
@@ -598,7 +604,7 @@
                 <div class="card">
                     <div class="card-body">
                         <h5 class="card-title">Bootcamp Santander - Backend</h5>
-                        <p class="card-text">Conjunto de projetos desenvolvidos durante o Bootcamp Santander 2025, focados nos fundamentos da linguagem Python. Os conteúdos praticados incluem Princípios de Desenvolvimento, Operadores e Manipulação de Strings, Estruturas de Dados, Funções, Orientação a Objetos, Pacotes e Módulos, Integração com Banco de Dados e Desenvolvimento Orientado a Testes (TDD).</p>
+                        <p class="card-text" style="font-size:1.35rem;line-height:1.7;">Conjunto de projetos desenvolvidos durante o Bootcamp Santander 2025, focados nos fundamentos da linguagem Python. Os conteúdos praticados incluem Princípios de Desenvolvimento, Operadores e Manipulação de Strings, Estruturas de Dados, Funções, Orientação a Objetos, Pacotes e Módulos, Integração com Banco de Dados e Desenvolvimento Orientado a Testes (TDD).</p>
                         <div class="mb-3">
                             <span class="tech-badge">Python</span>
                             <span class="tech-badge">Git</span>
@@ -612,7 +618,7 @@
                 <div class="card">
                     <div class="card-body">
                         <h5 class="card-title">Jogo Termo</h5>
-                        <p class="card-text">Implementação do famoso jogo de palavras "Termo" desenvolvido em grupo para a disciplina de Programação Orientada a Objetos. O projeto inclui interface gráfica intuitiva, mecanismo de verificação de palavras em tempo real e sistema de dicas através das cores, aplicando princípios de POO como encapsulamento, herança e polimorfismo.</p>
+                        <p class="card-text" style="font-size:1.35rem;line-height:1.7;">Implementação do famoso jogo de palavras "Termo" desenvolvido em grupo para a disciplina de Programação Orientada a Objetos. O projeto inclui interface gráfica intuitiva, mecanismo de verificação de palavras em tempo real e sistema de dicas através das cores, aplicando princípios de POO como encapsulamento, herança e polimorfismo.</p>
                         <div class="mb-3">
                             <span class="tech-badge">Java</span>
                             <span class="tech-badge">Java Swing</span>
@@ -626,7 +632,7 @@
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title">Sistema de Controle de Voos</h5>
-                            <p class="card-text">Um simulador de gerenciamento de aeroporto feito em C++, aplicando conceitos avançados de Programação Orientada a Objetos para garantir a organização e o armazenamento dos dados.</p>
+                            <p class="card-text" style="font-size:1.35rem;line-height:1.7;">Um simulador de gerenciamento de aeroporto feito em C++, aplicando conceitos avançados de Programação Orientada a Objetos para garantir a organização e o armazenamento dos dados.</p>
                             <div class="mb-3">
                                 <span class="tech-badge">C++</span>
                                 <span class="tech-badge">STL</span>
@@ -640,7 +646,7 @@
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title">Metagame Assistant</h5>
-                            <p class="card-text">Assistente inteligente que utiliza a API do Gemini AI para gerar estratégias, builds e dicas personalizadas para jogos, com base no perfil do jogador. Desenvolvido durante a NLW Agents da Rocketseat.</p>
+                            <p class="card-text" style="font-size:1.35rem;line-height:1.7;">Assistente inteligente que utiliza a API do Gemini AI para gerar estratégias, builds e dicas personalizadas para jogos, com base no perfil do jogador. Desenvolvido durante a NLW Agents da Rocketseat.</p>
                             <div class="mb-3">
                                 <span class="tech-badge">HTML</span>
                                 <span class="tech-badge">CSS</span>
@@ -658,7 +664,7 @@
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title">Problema do Caixeiro Viajante</h5>
-                            <p class="card-text">Implementação do clássico problema de otimização que busca o caminho mais curto para visitar todas as cidades uma única vez e retornar à origem. Utiliza listas encadeadas para representar grafos com adjacências ponderadas, aplicando conceitos de estruturas de dados e algoritmos.</p>
+                            <p class="card-text" style="font-size:1.35rem;line-height:1.7;">Implementação do clássico problema de otimização que busca o caminho mais curto para visitar todas as cidades uma única vez e retornar à origem. Utiliza listas encadeadas para representar grafos com adjacências ponderadas, aplicando conceitos de estruturas de dados e algoritmos.</p>
                             <div class="mb-3">
                                 <span class="tech-badge">C</span>
                             </div>
@@ -671,7 +677,7 @@
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title">Automação Spotify</h5>
-                            <p class="card-text">Script de automação que abre o Spotify, busca a playlist "Top 50 Brasil", reproduz as músicas e ajusta o volume para 51%. Desenvolvido de forma independente após aprender conceitos de automação na Jornada Python da Hashtag.</p>
+                            <p class="card-text" style="font-size:1.35rem;line-height:1.7;">Script de automação que abre o Spotify, busca a playlist "Top 50 Brasil", reproduz as músicas e ajusta o volume para 51%. Desenvolvido de forma independente após aprender conceitos de automação na Jornada Python da Hashtag.</p>
                             <div class="mb-3">
                                 <span class="tech-badge">Python</span>
                                 <span class="tech-badge">PyAutoGUI</span>
@@ -683,9 +689,9 @@
             </div>
         </section>
 
-    <section id="contato" class="container text-center py-5 reveal">
+    <section id="contato" class="container text-center py-5 reveal" style="padding-bottom:0;margin-bottom:0;">
             <h2 class="mb-4">Contato</h2>
-            <p>Gostou do que viu? Vamos conversar!</p>
+            <p style="font-size:1.35rem;line-height:1.7;">Gostou do que viu? Vamos conversar!</p>
             <div class="mt-4">
                 <a href="https://github.com/julianaapborges" target="_blank" class="btn btn-dark btn-lg mx-2 mb-2">
                     <i class="fab fa-github"></i> GitHub
