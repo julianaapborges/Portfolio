@@ -16,7 +16,7 @@ Este portfólio foi desenvolvido para apresentar minha trajetória, experiência
 
 ## 📸 Preview
 
-![Preview do Portfólio](./screenshot.png)
+![Preview do Portfólio](./preview.png)
 
 ## 📂 Seções
 
