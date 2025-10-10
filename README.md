@@ -16,7 +16,7 @@ Este portfólio foi desenvolvido para apresentar minha trajetória, experiência
 
 ## 📸 Preview
 
-![Preview do Portfólio](./preview.png)
+![Preview do Portfólio](./images/preview.png)
 
 ## 📂 Seções
 
@@ -25,9 +25,12 @@ Este portfólio foi desenvolvido para apresentar minha trajetória, experiência
 - **Projetos**
 - **Contato**
 
-## 🚀 Como acessar
+## 🚀 Como acessar - Portfólio Online
 
-Você pode acessar online (se publicado) ou baixar/clonar este repositório e abrir o arquivo `index.html` no navegador.
+Acesse meu portfólio hospedado no GitHub Pages:
+[https://julianaapborges.github.io/Portfolio](https://julianaapborges.github.io/Portfolio)
+
+Ou baixar/clonar este repositório e abrir o arquivo `index.html` no navegador.
 
 ```bash
 git clone https://github.com/julianaapborges/Portfolio.git
